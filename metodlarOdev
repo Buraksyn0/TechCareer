@@ -1,0 +1,157 @@
+class Metodlarodev{
+
+ //Örnek-1:Parametre olarak girilen kenar sayısına göre her bir iç açıyı hesaplayıp sonucu geri döndüren metod yazınız.
+ 
+ double? icAciHesapla(int kenarSayisi){
+
+  if(kenarSayisi < 3){
+    print("Bir çokgenin en az 3 kenarı olmalıdır.");
+    return null;
+  }else{
+    double icAciToplami = ((kenarSayisi - 2) * 180) / kenarSayisi;
+    return icAciToplami;
+  }
+
+
+
+
+
+    }
+
+    //Örnek-2:Parametre olarak girilen gün sayısına göre maaş hesabı yapan ve elde edilen değeri döndüren metod yazınız.
+    /*
+    --> 1 günde 8 saat çalışılabilir
+    --> Çalışma saat ücreti:40 lira
+    --> Mesai saat ücreti:80 lira
+    --> 150 saat üzeri mesai sayılır.
+  */
+
+/*
+  double? hesaplaMaas(int gunSayisi,int calismaSaat,){
+    
+    if(gunSayisi == 0){
+      print("Çalışılmayan gün.");
+      return null;
+    }else{
+      double maas = (calismaSaatUcreti*150)+(mesaiSaatUcreti*90);
+      return maas;
+    }
+
+  }
+  */
+
+//Örnek-3:Parametre olarak girilen otopark süresine göre otopark ücreti hesaplayarak geri döndüren metodu yazınız.
+//1 saat=50 lira
+//1 saat aşımından sonra her 1 saat 10 liradır.
+
+double? otoparkUcreti(int time){
+  if(time == 0){
+    print("Araç otoparka park etmemiştir.");
+    return null;
+  }else if(time == 1){
+    return (50);
+  }else if(time > 1){
+    return(50 + time*10);
+  }
+}
+
+
+//Örnek-4: Parametre olarak girilen kilometreyi mile dönüştüren sonra geri döndüren bir metod yazınız.Mile=km x 0.621
+
+double? donusturMil(double km){
+    if(km == 0){
+      print("Araç mesafe katetmemiştir.");
+      return null;
+    }
+    else{
+      return (km * 0.621);
+    }
+}
+
+//Örnek-5: Kenarları parametre olarak girilen ve dikdörtgenin alanını hesaplayan bir metod yazınız.
+
+void alanHesapla(int kisaKenar,int uzunKenar){
+  if(kisaKenar == 0 || uzunKenar == 0){
+    print("Uzunluk değeri 0 olamaz");
+    }
+    else{
+      print(kisaKenar * uzunKenar);
+    }
+    }
+
+  //Örnek-6: Parametre olarak girilen sayının faktoriyel değerini hesaplayıp geri döndüren metodu yazınız.
+
+  int? faktoriyelHesapla(int sayi){
+    int i = 1;
+    int faktoriyel = 1;
+    if(sayi == 0){
+      print("0! = 1");
+    }else if(sayi < 0){
+      print("Negatif sayının faktöriyeli olmaz");
+      return null;
+    }else{
+      while(i < sayi){
+        faktoriyel *= i;
+        i++;
+        return faktoriyel;
+      }
+    }
+  }
+}
+
+import 'metodlarOdev.dart';
+void main(){
+
+
+// Örnek-1 Kdoları
+var f = Metodlarodev();
+ 
+print(f.icAciHesapla(5));
+print(f.icAciHesapla(2));
+print(f.icAciHesapla(4));
+
+
+ 
+/*Örnek-2 kodları 
+
+var m = Metodlarodev();
+
+print(m.hesaplaMaas(5));
+print(m.hesaplaMaas(0));
+print(m.hesaplaMaas(6));
+print(m.hesaplaMaas(1));
+*/
+
+//Örnek-3 kodları
+var o = Metodlarodev();
+
+print(o.otoparkUcreti(0));
+print(o.otoparkUcreti(1));
+print(o.otoparkUcreti(2));
+print(o.otoparkUcreti(3));
+
+//Örnek-4 Kodları
+
+var mil = Metodlarodev();
+
+print(mil.donusturMil(0));
+print(mil.donusturMil(1));
+print(mil.donusturMil(2));
+
+//Örnek-5 Kodları
+
+var h = Metodlarodev();
+
+h.alanHesapla(0, 5);
+h.alanHesapla(4, 5);
+
+//Örnek-6 Kodları
+
+var fak = Metodlarodev();
+
+
+print(fak.faktoriyelHesapla(-1));
+print(fak.faktoriyelHesapla(3));
+
+
+}
